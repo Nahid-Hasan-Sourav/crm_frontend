@@ -1,9 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login from "../pages/login";
+import DefaultLayout from "../layout/DefaultLayout";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Login/>
+        element: (
+          
+            <DefaultLayout children={undefined}/>
+        
+        ),
+        // errorElement: <ErrorPage></ErrorPage>,
     }
 ]);
