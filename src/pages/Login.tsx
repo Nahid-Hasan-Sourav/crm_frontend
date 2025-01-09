@@ -3,8 +3,8 @@ import Logo from '../../src/images/logo/flex.png';
 
 const Login = () => {
   return (
-    <section className="h-full bg-neutral-200 dark:bg-neutral-700">
-      <div className="container h-full p-10">
+    <section className="h-[100vh] bg-neutral-200 dark:bg-neutral-700">
+      <div className="container h-full p-10 mx-auto">
         <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
             <div className="block rounded-lg dark:bg-neutral-800">
