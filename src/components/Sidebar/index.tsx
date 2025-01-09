@@ -10,6 +10,7 @@ import { FaUserTie } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa6";
 import { LuLayoutDashboard } from "react-icons/lu";
+import { FcStatistics } from "react-icons/fc";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -105,7 +106,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
           <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2 text-white">
+            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2 text-[#5982bd]">
               Dashboard
             </h3>
 
@@ -114,7 +115,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/calendar"
-                  className={`group relative flex items-center text-white gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center text-[#5982bd] gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('calendar') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
+                >
+                <FcStatistics className=''/>
+
+                  Statistics  
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/calendar"
+                  className={`group relative flex items-center text-[#5982bd] gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                     pathname.includes('calendar') &&
                     'bg-graydark dark:bg-meta-4'
                   }`}
@@ -130,7 +144,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/profile"
-                  className={`text-white group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                     pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
@@ -143,7 +157,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/profile"
-                  className={`text-white group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                     pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
@@ -158,7 +172,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                <li>
                 <NavLink
                   to="/profile"
-                  className={`text-white group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                     pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
@@ -173,7 +187,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   <li>
                 <NavLink
                   to="/profile"
-                  className={`text-white group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                     pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
@@ -204,7 +218,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/profile"
-                  className={`text-white group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
+                  className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
                     }`}
                 >
                  <FaUserTie/>
@@ -218,7 +232,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                <li>
                 <NavLink
                   to="/profile"
-                  className={`text-white group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
+                  className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
                     }`}
                 >
                  <FaRegUser/>
@@ -238,7 +252,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`text-white group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                           (pathname === '/' ||
                             pathname.includes('dashboard')) &&
                           'bg-graydark dark:bg-meta-4'
@@ -282,8 +296,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/"
                               className={({ isActive }) =>
-                                'group relative flex items-center text-white gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center text-[#5982bd] gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               Role
@@ -293,8 +307,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/"
                               className={({ isActive }) =>
-                                'group relative flex items-center text-white gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center text-[#5982bd] gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               Permission
@@ -304,8 +318,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/"
                               className={({ isActive }) =>
-                                'group relative flex items-center text-white gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center text-[#5982bd] gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               User
@@ -456,8 +470,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/ui/alerts"
                               className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               Alerts
@@ -467,8 +481,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/ui/buttons"
                               className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               Buttons
@@ -564,8 +578,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/auth/signin"
                               className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               Sign In
@@ -575,8 +589,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <NavLink
                               to="/auth/signup"
                               className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-[#5982bd] ' +
+                                (isActive && '!text-[#5982bd]')
                               }
                             >
                               Sign Up
