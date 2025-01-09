@@ -1,6 +1,7 @@
 import React, { useState, ReactNode } from 'react';
 import Header from '../components/Header/index';
 import Sidebar from '../components/Sidebar/index';
+import { Outlet } from 'react-router-dom';
 
 const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,9 +21,9 @@ const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
           {/* <!-- ===== Header End ===== --> */}
 
           {/* <!-- ===== Main Content Start ===== --> */}
-          <main>
-            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 bg-[#f1f5f9]">
-              {children}
+          <main className='h-full'>
+            <div className="mx-auto h-full max-w-screen-2xl p-4 md:p-6 2xl:p-10 bg-[#f1f5f9]">
+              <Outlet/>
             </div>
           </main>
           {/* <!-- ===== Main Content End ===== --> */}
