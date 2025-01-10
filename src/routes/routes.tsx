@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "../layout/DefaultLayout";
 import Zone from "../pages/zone/Index";
 import Division from "../pages/Division/Index";
+import WinChance from "../pages/WinChance/Index";
 
 import Login from "../pages/Login";
 
@@ -19,12 +20,17 @@ export const router = createBrowserRouter([
             //     element: <Index />,
             // },
             {
-                path: "zones", // This renders at /dashboard/index
+                path: "zones", 
                 element: <Zone/>
             },
             {
-                path: "divisions", // This renders at /dashboard/index
+                path: "divisions",
                 element: <Division/>
+            },
+
+            {
+                path: "win-chances",
+                element: <WinChance/>
             },
         ],
     },
