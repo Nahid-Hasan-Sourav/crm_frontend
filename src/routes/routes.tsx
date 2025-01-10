@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "../layout/DefaultLayout";
-import Index from "../pages/zone/Index";
+import Zone from "../pages/zone/Index";
+import Division from "../pages/Division/Index";
+
 import Login from "../pages/Login";
 
 export const router = createBrowserRouter([
@@ -18,7 +20,11 @@ export const router = createBrowserRouter([
             // },
             {
                 path: "zones", // This renders at /dashboard/index
-                element: <Index/>
+                element: <Zone/>
+            },
+            {
+                path: "divisions", // This renders at /dashboard/index
+                element: <Division/>
             },
         ],
     },

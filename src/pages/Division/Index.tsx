@@ -6,11 +6,17 @@ import Pagination from "../../components/Pagination/Index"
 const Index = () => {
   const [filters, setFilters] = useState([
     {
-      name: "Zone",
+      name: "Division",
       type: "text",
       value: "",
-      onChange: (value: string) => handleFilterChange("Zone", value),
+      onChange: (value: string) => handleFilterChange("Division", value),
     },
+    {
+        name: "Id",
+        type: "text",
+        value: "",
+        onChange: (value: string) => handleFilterChange("Id", value),
+      },
 
     {
       name: "Show Entries",
@@ -60,13 +66,13 @@ const Index = () => {
     //   .then((data) => console.log("Fetched data:", data));
   };
 
-  const headers = ["Id","Zone", "Actions"];
+  const headers = ["Id","Division", "Actions"];
   const rows = [
-    { id:"1",Zone: "John Doe" },
-    { id:"2",Zone: "Jane Smith" },
-    { id:"3",Zone: "Nahid Hasan" },
-    { id:"4",Zone: "Sourav" },
-    { id:"5",Zone: "Rayhan" },
+    { Id:"1",Division: "Business Dev. & Sales" },
+    { Id:"2",Division: "China" },
+    { Id:"3",Division: "Spain" },
+    { Id:"4",Division: "Bangladesh" },
+    { Id:"5",Division: "Usa" },
   ];
 
   return (
