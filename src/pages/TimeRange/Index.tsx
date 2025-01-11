@@ -6,7 +6,7 @@ import Pagination from "../../components/Pagination/Index"
 const Index = () => {
   const [filters, setFilters] = useState([
     {
-      name: "Win Chance",
+      name: "Time Range",
       type: "text",
       value: "",
       onChange: (value: string) => handleFilterChange("Division", value),
@@ -60,13 +60,13 @@ const Index = () => {
     //   .then((data) => console.log("Fetched data:", data));
   };
 
-  const headers = ["Id","Win Chance", "Actions"];
+  const headers = ["Id","Time Range", "Actions"];
   const rows = [
-    { Id:"1",winChance: "5%" },
-    { Id:"2",winChance: "25%" },
-    { Id:"3",winChance: "50%" },
-    { Id:"4",winChance: "65%" },
-    { Id:"5",winChance: "80%" },
+    { Id:"1",timeRange: "30 to 60 days" },
+    { Id:"2",timeRange: "6 months or more" },
+    { Id:"3",timeRange: "60 to 90 days" },
+    { Id:"4",timeRange: "90 days to 6 months" },
+    { Id:"5",timeRange: "less than 30 days" },
   ];
 
   return (

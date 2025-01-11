@@ -22,7 +22,7 @@ const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
           {/* <!-- ===== Main Content Start ===== --> */}
           <main className='h-full'>
-            <div className="mx-auto h-full max-w-screen-2xl p-4 md:p-6 2xl:p-10 bg-[#f1f5f9]">
+            <div className="mx-auto h-full max-w-screen-2xl p-4 md:p-6 2xl:p-10">
               <Outlet/>
             </div>
           </main>

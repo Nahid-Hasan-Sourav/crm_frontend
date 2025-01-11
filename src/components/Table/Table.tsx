@@ -8,11 +8,11 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ headers, rows }) => {
   return (
     <div className="overflow-x-auto">
-      <table className="table-auto w-full border border-gray-300">
+      <table className="table-auto w-full border border-gray-300 ">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-gray-2 dark:bg-meta-4">
             {headers.map((header, index) => (
-              <th key={index} className="px-4 py-2 border border-gray-300">
+              <th key={index} className="px-4 py-2 border bg-gray-2 dark:bg-meta-4">
                 {header}
               </th>
             ))}

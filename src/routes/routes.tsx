@@ -3,6 +3,7 @@ import DefaultLayout from "../layout/DefaultLayout";
 import Zone from "../pages/zone/Index";
 import Division from "../pages/Division/Index";
 import WinChance from "../pages/WinChance/Index";
+import TimeRange from "../pages/TimeRange/Index";
 
 import Login from "../pages/Login";
 
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "win-chances",
                 element: <WinChance/>
+            },
+            {
+                path: "time-range",
+                element: <TimeRange/>
             },
         ],
     },

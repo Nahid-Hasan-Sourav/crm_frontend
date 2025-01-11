@@ -66,10 +66,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   return (
     <aside
-      ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-gray-50 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-    >
+    ref={sidebar}
+    className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+      sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+    }`}
+  >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
@@ -105,7 +106,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
           <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2 text-[#5982bd]">
+            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               Dashboard
             </h3>
 
@@ -114,7 +115,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/calendar"
-                  className={`group relative flex items-center text-[#5982bd] gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') &&
+                  className={`group relative flex items-center   gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') &&
                     'bg-graydark dark:bg-meta-4'
                     }`}
 
@@ -131,7 +132,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -149,7 +150,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -165,7 +166,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -183,7 +184,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -201,7 +202,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -235,7 +236,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -253,7 +254,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -274,10 +275,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`text-[#5982bd] group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/' ||
-                            pathname.includes('dashboard')) &&
-                          'bg-graydark dark:bg-meta-4'
-                          }`}
+                        className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 `}
                         onClick={(e) => {
                           e.preventDefault();
                           sidebarExpanded
@@ -317,7 +315,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -330,7 +328,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >
@@ -343,7 +341,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   className={({ isActive }) =>
                     `group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${isActive
                       ? "bg-gray-500 bg-graydark dark:bg-meta-4"
-                      : "text-[#5982bd]"
+                      : " "
                     }`
                   }
                 >

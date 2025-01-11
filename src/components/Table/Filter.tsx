@@ -19,7 +19,7 @@ const Filters: React.FC<FiltersProps> = ({ filters }) => {
         <div key={index} className="flex flex-col">
           {filter.type === "dropdown" ? (
             <select
-              className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
+              className="border bg-gray-2 dark:bg-meta-4 rounded px-3 py-2 focus:outline-none"
               value={filter.value}
               onChange={(e) => filter.onChange(e.target.value)}
             >
@@ -35,7 +35,7 @@ const Filters: React.FC<FiltersProps> = ({ filters }) => {
               placeholder={`Search ${filter.name}...`}
               value={filter.value}
               onChange={(e) => filter.onChange(e.target.value)}
-              className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
+              className="border bg-gray-2 dark:bg-meta-4 rounded px-3 py-2 focus:outline-none"
             />
           )}
         </div>
