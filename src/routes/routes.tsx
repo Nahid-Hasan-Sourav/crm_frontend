@@ -5,6 +5,9 @@ import Division from "../pages/Division/Index";
 import WinChance from "../pages/WinChance/Index";
 import TimeRange from "../pages/TimeRange/Index";
 import Quotation from "../pages/Quotation/Index";
+import Role from "../pages/Role/Index";
+import Permission from "../pages/Permission/Index";
+import User from "../pages/User/Index";
 
 import Login from "../pages/Login";
 
@@ -41,6 +44,18 @@ export const router = createBrowserRouter([
             {
                 path: "quotations",
                 element: <Quotation/>
+            },
+            {
+                path: "roles",
+                element: <Role/>
+            },
+            {
+                path: "permissions",
+                element: <Permission/>
+            },
+            {
+                path: "users",
+                element: <User/>
             },
         ],
     },
