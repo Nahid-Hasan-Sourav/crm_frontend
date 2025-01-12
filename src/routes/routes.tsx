@@ -4,6 +4,7 @@ import Zone from "../pages/zone/Index";
 import Division from "../pages/Division/Index";
 import WinChance from "../pages/WinChance/Index";
 import TimeRange from "../pages/TimeRange/Index";
+import Quotation from "../pages/Quotation/Index";
 
 import Login from "../pages/Login";
 
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
             {
                 path: "time-range",
                 element: <TimeRange/>
+            },
+            {
+                path: "quotations",
+                element: <Quotation/>
             },
         ],
     },
