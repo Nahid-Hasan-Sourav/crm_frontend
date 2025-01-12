@@ -230,7 +230,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Quotations    --> */}
 
               {/* <!-- Menu Item Managers   --> */}
-              <li>
+              {/* <li>
               <NavLink
                   to="/dashboard/managers"
                   className={({ isActive }) =>
@@ -244,11 +244,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Managers
 
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item Managers   --> */}
 
               {/* <!-- Menu Item User   --> */}
-              <li>
+              {/* <li>
               <NavLink
                   to="/dashboard/customers"
                   className={({ isActive }) =>
@@ -261,7 +261,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   <FaRegUser />
                   Customer
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item User   --> */}
 
               {/* <!-- Menu Item Dashboard --> */}
