@@ -10,6 +10,7 @@ import Permission from "../pages/Permission/Index";
 import User from "../pages/User/Index";
 
 import Login from "../pages/Login";
+import ProtectedRoute from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
     {
@@ -18,7 +19,9 @@ export const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <DefaultLayout />,
+        element: <ProtectedRoute>
+            <DefaultLayout />
+            </ProtectedRoute>,
         children: [
             // {
             //     path: "", // This will render when the user visits /dashboard
