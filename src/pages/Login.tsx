@@ -1,7 +1,25 @@
 import Logo from '../../src/images/logo/flex.png';
 
+import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import TextInput from '../components/TextInput';
 
-const Login = () => {
+interface LoginFormInputs {
+  username: string;
+  password: string;
+}
+
+const Login: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormInputs>();
+
+  const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
+    console.log('Form Data:', data);
+    // Perform API call or any other action here
+  };
   return (
     <section className="h-[100vh] bg-neutral-200 dark:bg-neutral-700">
       <div className="container h-full p-10 mx-auto">
@@ -24,39 +42,28 @@ const Login = () => {
                       </h4>
                     </div>
 
-                    <form>
-                      <p className="mb-4">Please login to your account</p>
-                      {/* <!--Username input--> */}
-                      <div className="mb-4">
-                        <label
-                          htmlFor="username"
-                          className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >
-                          Username
-                        </label>
-                        <input
-                          type="text"
-                          id="username"
-                          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                          required
-                        />
-                      </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className="p-6">
+                    <p className="mb-4">Please login to your account</p>
+                      {/* Username Input */}
+      <TextInput
+        label="Username"
+        id="username"
+        name="username"
+        register={register}
+        errors={errors.username}
+        placeholder="Enter your username"
+      />
 
-                      {/* <!--Password input--> */}
-                      <div className="mb-4">
-                        <label
-                          htmlFor="password"
-                          className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          id="password"
-                          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                          required
-                        />
-                      </div>
+      {/* Password Input */}
+      <TextInput
+        label="Password"
+        id="password"
+        name="password"
+        type="password"
+        register={register}
+        errors={errors.password}
+        placeholder="Enter your password"
+      />
 
                       {/* <!--Submit button--> */}
                       <div className="mb-12 pb-1 pt-1 text-center">
