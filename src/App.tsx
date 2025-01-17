@@ -1,5 +1,6 @@
 import { RouterProvider } from 'react-router-dom'
 import { router } from './routes/routes'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
         <RouterProvider router={router}>
           
         </RouterProvider>
+        <ToastContainer/>
     </>
   )
 }
