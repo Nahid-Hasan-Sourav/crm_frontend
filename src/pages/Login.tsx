@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import TextInput from '../components/TextInput';
 import useApi from '../hooks/useApi';
 import Logo from '../../src/images/logo/flex.png';
+import { toast } from 'react-toastify';
 
 interface LoginFormInputs {
   username: string;
@@ -20,21 +21,24 @@ const Login: React.FC = () => {
 
   const onSubmit: SubmitHandler<LoginFormInputs> = async (formData) => {
     console.log('Form Data:', formData);
-
-    // Call the API
-    await callApi('/login', 'POST', formData);
-
-    // Handle the API response
-    if (data) {
-      console.log('Login successful:', data);
-      // Save the token, navigate, or perform any post-login action
+  
+    const { data: result, error: apiError } = await callApi('/login', 'POST', formData);
+  
+    if (result) {
+      console.log('Login successful:', result);
+      toast.success('Login successful!', {
+        autoClose: 1000, // 1 second
+      });
+      // Perform actions such as save token, navigate, etc.
     }
-
-    if (error) {
-      console.error('Login failed:', error);
+    if (apiError) {
+      console.log('Login failed:', apiError);
+      toast.error(`Login failed: ${apiError}`, {
+        autoClose: 2700, // 1 second
+      });
     }
   };
-
+  
   return (
     <section className="h-[100vh] bg-neutral-200 dark:bg-neutral-700">
       <div className="container h-full p-10 mx-auto">

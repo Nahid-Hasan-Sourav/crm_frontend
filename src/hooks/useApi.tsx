@@ -67,29 +67,75 @@
 
 import { useState } from 'react';
 import axiosInstance from '../api/axiosInstance';
+// import axiosInstance from '../api/axiosInstance';
 
+// const useApi = () => {
+//   const [data, setData] = useState(null);
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState<string | null>(null);
+
+//   const callApi = async (url: string, method: string = 'GET', requestData: any = null, token: string | null = null) => {
+//     setLoading(true);
+//     setError(null);
+
+//     try {
+//       const headers = token ? { Authorization: `Bearer ${token}` } : {};
+//       const config = {
+//         method,
+//         url,
+//         data: requestData,
+//         headers,
+//       };
+
+//       const response = await axiosInstance(config);
+//       setData(response.data);
+//       setLoading(false);
+//       return { data: response.data, error: null };
+//     } catch (err: any) {
+//       const errorMessage = err.message || 'An error occurred';
+//       setError(errorMessage);
+//       setLoading(false);
+//       return { data: null, error: errorMessage };
+//     }
+//   };
+
+//   return { data, loading, error, callApi };
+// };
+
+// export default useApi;
+
+
+// In useApi.tsx
 const useApi = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const callApi = async (url: string, method: string = 'GET', requestData: any = null, token: string | null = null) => {
+  const callApi = async (
+    url: string,
+    method: string = 'GET',
+    requestData: any = null,
+    token: string | null = null
+  ) => {
     setLoading(true);
     setError(null);
 
     try {
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
-      const config = {
+      const response = await axiosInstance({
         method,
         url,
         data: requestData,
         headers,
-      };
+      });
 
-      const response = await axiosInstance(config);
       setData(response.data);
+      return response.data;
     } catch (err: any) {
-      setError(err.message || 'An error occurred');
+      console.log("Error check ", err.message);
+      const errorMessage = err.response?.data?.message || err.message || 'An error occurred';
+      setError(errorMessage);
+      return { data: null, error: errorMessage }; // Return both data and error
     } finally {
       setLoading(false);
     }
@@ -98,4 +144,4 @@ const useApi = () => {
   return { data, loading, error, callApi };
 };
 
-export default useApi;
+export default useApi;  // This ensures useApi is a default export
