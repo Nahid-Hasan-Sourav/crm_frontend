@@ -94,11 +94,11 @@ const Login: React.FC = () => {
                         </button>
                       </div>
 
-                      {error && (
+                      {/* {error && (
                         <p className="text-red-500 text-center">
                           {error}
                         </p>
-                      )}
+                      )} */}
                     </form>
                   </div>
                 </div>
