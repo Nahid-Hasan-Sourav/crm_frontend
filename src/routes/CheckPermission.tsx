@@ -20,9 +20,7 @@
 // };
 
 // export default CheckPermission;
-
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -36,15 +34,23 @@ const CheckPermission: React.FC<CheckPermissionProps> = ({ requiredPermission, c
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Check if the user has the required permission
+  // Use the "from" state or fallback to the current path
+  const from = location.state?.from || '/dashboard ';
+  console.log("checkPermission", { from, current: location.pathname }); // Debugging
+
+  useEffect(() => {
+    // Redirect if the required permission is missing
+    if (requiredPermission && (!permissions || !permissions.includes(requiredPermission))) {
+      navigate(from, { replace: true });
+    }
+  }, [requiredPermission, permissions, navigate, from]);
+
+  // Render children if the user has permission
   if (requiredPermission && (!permissions || !permissions.includes(requiredPermission))) {
-    // Redirect back to the previous location
-    navigate(location.state?.from,{ replace: true }); // Replace to avoid back loop
-    return null; 
+    return null; // Don't render children if permission is missing
   }
 
-  // Render children if permission is granted
-  return <>{React.cloneElement(children as React.ReactElement, { state: { from: location.pathname } })}</>;
+  return <>{children}</>;
 };
 
 export default CheckPermission;

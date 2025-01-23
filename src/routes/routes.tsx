@@ -12,6 +12,7 @@ import User from "../pages/User/Index";
 import Login from "../pages/Login";
 import ProtectedRoute from "./ProtectedRoute";
 import CheckPermission from "./CheckPermission";
+import Create from "../pages/Division/Create";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,12 @@ export const router = createBrowserRouter([
                     <CheckPermission requiredPermission="manage_zones">
                     <Zone/>
                     </CheckPermission> 
+            },
+            {
+                path: "zone/create", 
+                element:
+                  
+                    <Create/>
             },
             {
                 path: "divisions",
